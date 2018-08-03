@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -13,8 +13,17 @@ module.exports = merge(common, {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
+          // 'postcss-loader',
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          // 'postcss-loader',
+          'less-loader',
         ],
       },
       {
@@ -25,7 +34,7 @@ module.exports = merge(common, {
             options: {
               limit: 5000,
               name: "imgs/[name].[ext]",
-              // publicPath: './'
+              publicPath: '../'
             }
           },
         ]
