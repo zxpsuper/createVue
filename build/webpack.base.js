@@ -1,28 +1,26 @@
 const webpack = require('webpack');
+const path = require('path');
 // vue-loader 插件
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // html插件
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const HappyPack = require('happypack');
 const { resolve } = require('path');
-// const os = require('os');
-// const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
-const path = require('path');
-
-/* const HtmlWebpackPlugin = require('html-webpack-plugin');
-// 打包成额外的文件
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); */
+// 使用happypack
+const HappyPack = require('happypack');
+const os = require('os');
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 module.exports = {
   entry: './src/index.js',
   module: {
     rules: [
-      /* {
+      {
         test: /\.js$/,
-        loader: 'happypack/loader?id=happybabel', // 将loader换成happypack
-        include: [resolve('src')], // src是项目开发的目录
+        //把对.js 的文件处理交给id为happyBabel 的HappyPack 的实例执行
+        loader: 'happypack/loader?id=happyBabel',
+        //排除node_modules 目录下的文件
         exclude: /node_modules/
-      }, */
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -35,21 +33,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
     }),
-    // new HappyPack({
-    //   id: 'happybabel',
-    //   loaders: ['babel-loader?cacheDirectory=true'],
-    //   threadPool: happyThreadPool,
-    //   verbose: true
-    // }),
+    new HappyPack({
+      //用id来标识 happypack处理那里类文件
+      id: 'happyBabel',
+      //如何处理  用法和loader 的配置一样
+      loaders: [{
+        loader: 'babel-loader?cacheDirectory=true',
+      }],
+      //共享进程池
+      threadPool: happyThreadPool,
+      //允许 HappyPack 输出日志
+      verbose: true,
+    })
+    // 解决vender后面的hash每次都改变
     // new webpack.HashedModuleIdsPlugin(),
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // both options are optional
-    //   filename: "css/[name].[hash].css",
-    //   chunkFilename: '[id].[hash].css'
-    // }),
-    // // 解决vender后面的hash每次都改变
-    // new webpack.HashedModuleIdsPlugin(),
+    
   ],
   output: {
     filename: 'js/[name].[hash].js',
@@ -59,7 +57,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'vue': 'vue/dist/vue.esm.js',
-      '@': resolve('../src'),
+      '@': resolve('src'),
     }
   }
 };

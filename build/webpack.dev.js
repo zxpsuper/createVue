@@ -34,7 +34,7 @@ module.exports = merge(common, {
             options: {
               limit: 5000,
               name: "imgs/[name].[ext]",
-              publicPath: '../'
+              // publicPath: '../'
             }
           },
         ]

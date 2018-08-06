@@ -41,7 +41,14 @@ module.exports = merge(common, {
       {
         test: /\.less$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: '../'
+            }
+          },
           'css-loader',
           // 'postcss-loader',
           'less-loader',
@@ -55,7 +62,6 @@ module.exports = merge(common, {
             options: {
               limit: 5000,
               name: "imgs/[hash].[ext]",
-              // publicPath: '../'
             }
           },
           // 图片压缩
