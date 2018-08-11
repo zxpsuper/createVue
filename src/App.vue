@@ -2,8 +2,6 @@
   <div id="app">
     <img src="./assets/logo.png" alt="">
     <HelloWorld msg="welcome to suporka vue"/>
-    <img src="./datepicker.png" alt="">
-    <div class="test"></div>
   </div>
 </template>
 <script>
@@ -16,6 +14,8 @@ export default {
   components: {
     HelloWorld
   },
+  created() {
+  }
 }
 </script>
 
@@ -27,6 +27,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  transform: rotate(0deg);
 }
 .name {
   color: #00aac5;

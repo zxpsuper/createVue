@@ -44,15 +44,10 @@ module.exports = {
       threadPool: happyThreadPool,
       //允许 HappyPack 输出日志
       verbose: true,
-    })
+    }),
     // 解决vender后面的hash每次都改变
-    // new webpack.HashedModuleIdsPlugin(),
-    
+    new webpack.HashedModuleIdsPlugin(),
   ],
-  output: {
-    filename: 'js/[name].[hash].js',
-    path: path.resolve(__dirname, '../dist')
-  },
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {

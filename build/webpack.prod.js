@@ -11,8 +11,26 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = merge(common, {
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: "vendor",
+          test: /[\\/]node_modules[\\/]/,
+          priority: 10,
+          chunks: "initial" // 只打包初始时依赖的第三方
+        },
+      }
+    },
     minimizer: [
       new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            warnings: false,
+            drop_debugger: true,
+            drop_console: true
+          },
+        },
         cache: true,
         parallel: true,
         sourceMap: true // set to true if you want JS source maps
@@ -34,7 +52,7 @@ module.exports = merge(common, {
             }
           },
           'css-loader',
-          // 'postcss-loader',
+          'postcss-loader',
           'sass-loader',
         ],
       },
@@ -50,7 +68,7 @@ module.exports = merge(common, {
             }
           },
           'css-loader',
-          // 'postcss-loader',
+          'postcss-loader',
           'less-loader',
         ],
       },
@@ -101,4 +119,8 @@ module.exports = merge(common, {
     }),
   ],
   mode: 'production',
+  output: {
+    filename: 'js/[name].[contenthash].js',
+    path: path.resolve(__dirname, '../dist')
+  },
 });
