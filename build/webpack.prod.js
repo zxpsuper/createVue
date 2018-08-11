@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.base.js');
 // 打包之前清除文件
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// 压缩CSS插件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // 压缩CSS和JS代码
@@ -11,6 +12,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = merge(common, {
   optimization: {
+    // 分离chunks
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
@@ -33,7 +35,7 @@ module.exports = merge(common, {
         },
         cache: true,
         parallel: true,
-        sourceMap: true // set to true if you want JS source maps
+        sourceMap: false // set to true if you want JS source maps
       }),
       new OptimizeCSSAssetsPlugin({})
     ]

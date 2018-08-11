@@ -34,9 +34,9 @@ module.exports = {
       template: path.resolve(__dirname, '../index.html'),
     }),
     new HappyPack({
-      //用id来标识 happypack处理那里类文件
+      //用id来标识 happypack处理类文件
       id: 'happyBabel',
-      //如何处理  用法和loader 的配置一样
+      //如何处理 用法和loader 的配置一样
       loaders: [{
         loader: 'babel-loader?cacheDirectory=true',
       }],

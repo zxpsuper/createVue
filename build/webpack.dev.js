@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: '../dist'
   },
   output: {
     filename: 'js/[name].[hash].js',
