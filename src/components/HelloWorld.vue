@@ -2,36 +2,34 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      you can use this to develop your project.
+      You can use this to develop your project.
       <a href="https://github.com/zxpsuper/createVue" target="_blank">Create Vue</a>.
     </p>
-    <p class="link">
-      <a href="https://juejin.im/user/5af17df4518825672a02e1f5">juejin</a>
-      <a href="https://blog.csdn.net/weixin_38788347">CSDN</a>
-      <a href="https://github.com/zxpsuper">github</a>
-      <a href="https://zxpsuper.github.io/">Blog</a>
-    </p>
+    <p>This project will help you create a vue project step by step. </p>
+    <p>You can learn webpack, vue, vue-router, vuex, proxy and so on.</p>
+    <p>I hope that can be helpful for you!! And finally,</p>
     <h2>Welcome star!</h2>
+    <p>You have stay here for {{count}} second</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  },
-  created() {
-    this.init()
-  },
-  methods: {
-    init() {
-      let arr = [0, 1 , 2]
-      arr.push(3)
-      console.log(arr)
+    msg: {
+      type: String,
+      default: "Welcome to suporka vue"
     }
-  }
-}
+  },
+  computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  },
+  created() {},
+  methods: {}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
