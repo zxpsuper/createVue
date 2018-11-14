@@ -11,7 +11,7 @@
       <a href="https://github.com/zxpsuper">github</a>
       <a href="https://zxpsuper.github.io/">Blog</a>
     </p>
-    <p>You have stay here for {{count}} second</p>
+    <p>You have stay here for {{count}} seconds!</p>
   </div>
 </template>
 <script>
