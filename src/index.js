@@ -6,6 +6,7 @@ import router from "./router";
 import store from "./store";
 
 import "./index.scss";
+
 // 注册路由
 Vue.use(VueRouter);
 
