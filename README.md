@@ -10,16 +10,26 @@
 
 ## 2018/11/14
 
-- 添加 vue-router
+-   添加 vue-router
 
-- 添加 vuex
+-   添加 vuex
 
 ## 2018/12/29
 
-- 添加 git-commit
+-   添加 git-commit
 
 1. `git add file`
 
 2. `npm run commit`
 
 3. `git push`
+
+-   添加 axios
+
+```js
+// 使用方法,两者均为 promise
+
+this.$ajax.get(url, data, config);
+
+this.$ajax.post(url, data, config);
+```
