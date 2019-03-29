@@ -51,6 +51,10 @@ export default {
         this.timer = setInterval(() => {
             this.$store.dispatch('countUp');
         }, 1000);
+
+        this.$ajax.get('../static/head.json', {}).then(res => {
+            console.log(res);
+        });
     },
     methods: {},
     destroyed() {

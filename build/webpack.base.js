@@ -9,6 +9,7 @@ const { resolve } = require('path');
 const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -53,6 +54,13 @@ module.exports = {
         }),
         // 解决vender后面的hash每次都改变
         new webpack.HashedModuleIdsPlugin(),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, '../static'),
+                to: 'static',
+                ignore: ['.*'],
+            },
+        ]),
     ],
     resolve: {
         extensions: ['.js', '.vue'],
