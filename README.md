@@ -33,3 +33,7 @@ this.$ajax.get(url, data, config);
 
 this.$ajax.post(url, data, config);
 ```
+
+## 2019/03/29
+
+加入 `copy-webpack-plugin` 插件，设置 static 静态资源文件夹，使其内容打包后存在于打包后的 static 文件夹中
