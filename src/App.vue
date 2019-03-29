@@ -15,7 +15,8 @@
 </template>
 <script>
 import HelloWorld from '@/components/HelloWorld.vue';
-
+import { mapActions } from 'vuex';
+console.log(mapActions);
 export default {
     name: 'app',
     data() {
@@ -49,14 +50,17 @@ export default {
             });
 
         this.timer = setInterval(() => {
-            this.$store.dispatch('countUp');
+            // this.$store.dispatch('countUp');
+            this.countUp(); // 两种方法，一种直接commit,一种通过 mapActions([]) 引入至methods中后再使用
         }, 1000);
 
         this.$ajax.get('../static/head.json', {}).then(res => {
             console.log(res);
         });
     },
-    methods: {},
+    methods: {
+        ...mapActions(['countUp']),
+    },
     destroyed() {
         clearTimeout(this.timer);
     },
