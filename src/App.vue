@@ -16,7 +16,6 @@
 <script>
 import HelloWorld from '@/components/HelloWorld.vue';
 import { mapActions } from 'vuex';
-console.log(mapActions);
 export default {
     name: 'app',
     data() {
