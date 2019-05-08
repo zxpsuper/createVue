@@ -16,12 +16,19 @@
     <Throttle :time="1000" events="click">
       <button @click="onClick($event, 1)" isDebounce>click</button>
     </Throttle>
+    <date-picker style="margin: 10px auto"></date-picker>
+    <mask-model v-model="ifShowMask">
+      <div style="padding: 20px">Welcome to suporka vue</div>
+    </mask-model>
   </div>
 </template>
 
 <script>
+import DatePicker from '@/base/datePicker/index.vue';
+import MaskModel from '@/base/maskModel';
 export default {
     name: 'HelloWorld',
+    components: { DatePicker, MaskModel },
     props: {
         msg: {
             type: String,
@@ -31,6 +38,7 @@ export default {
     data() {
         return {
             val: 0,
+            ifShowMask: false,
         };
     },
     computed: {
@@ -50,6 +58,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.$eventBus.$emit('home-on', '这是home $emit参数', 'ee');
+            this.ifShowMask = !this.ifShowMask;
         }, 1000);
     },
     methods: {

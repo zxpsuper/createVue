@@ -18,13 +18,17 @@
 export default {
     name: '',
     data() {
-        return {};
+        return {
+            name: 1,
+            $haha: 22,
+        };
     },
     computed: {
         count() {
             return this.$store.state.count;
         },
     },
+    created() {},
 };
 </script>
 <style scoped>
