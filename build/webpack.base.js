@@ -11,6 +11,9 @@ const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// 暂时看不到dll的效果，等待下次测试
+// const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+
 module.exports = {
     entry: './src/index.js',
     module: {
@@ -65,6 +68,13 @@ module.exports = {
                 ignore: ['.*'],
             },
         ]),
+        // 暂时看不到dll的效果
+        /* new AddAssetHtmlWebpackPlugin({
+            filepath: path.resolve(__dirname, '../dll/normal.dll.js'), // 对应的 dll 文件路径
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: path.resolve(__dirname, '..', 'dll/normal-manifest.json'),
+        }), */
     ],
     resolve: {
         extensions: ['.js', '.vue'],
