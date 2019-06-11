@@ -68,6 +68,7 @@ module.exports = {
                 ignore: ['.*'],
             },
         ]),
+
         // 暂时看不到dll的效果
         /* new AddAssetHtmlWebpackPlugin({
             filepath: path.resolve(__dirname, '../dll/normal.dll.js'), // 对应的 dll 文件路径
@@ -75,6 +76,13 @@ module.exports = {
         new webpack.DllReferencePlugin({
             manifest: path.resolve(__dirname, '..', 'dll/normal-manifest.json'),
         }), */
+
+        // 指定环境,定义环境变量，项目中暂时未用到
+        new webpack.DefinePlugin({
+            'process.env': {
+                VUEP_BASE_URL: JSON.stringify('http://localhost:9000'),
+            },
+        }),
     ],
     resolve: {
         extensions: ['.js', '.vue'],

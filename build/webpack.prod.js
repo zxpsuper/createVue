@@ -10,6 +10,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 压缩CSS和JS代码
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const WorkboxPlugin = require('workbox-webpack-plugin'); // 引入 PWA 插件
 module.exports = merge(common, {
     optimization: {
         // 分离chunks
@@ -118,6 +120,11 @@ module.exports = merge(common, {
             // both options are optional
             filename: 'css/[name].[hash].css',
             chunkFilename: 'css/[id].[hash].css',
+        }),
+        // 配置 PWA
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
         }),
     ],
     mode: 'production',
