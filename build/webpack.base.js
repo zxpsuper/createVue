@@ -15,6 +15,7 @@ module.exports = {
     entry: './src/index.js',
     module: {
         rules: [
+            // 处理js
             {
                 test: /\.js$/,
                 //把对.js 的文件处理交给id为happyBabel 的HappyPack 的实例执行
@@ -22,10 +23,12 @@ module.exports = {
                 //排除node_modules 目录下的文件
                 exclude: /node_modules/,
             },
+            // 处理vue
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
             },
+            // 处理字体
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
@@ -54,6 +57,7 @@ module.exports = {
         }),
         // 解决vender后面的hash每次都改变
         new webpack.HashedModuleIdsPlugin(),
+        // 处理静态文件夹 static 复制到打包的 static 文件夹
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, '../static'),

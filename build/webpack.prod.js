@@ -14,7 +14,7 @@ module.exports = merge(common, {
     optimization: {
         // 分离chunks
         splitChunks: {
-            chunks: 'all',
+            chunks: 'all', // 所有的 chunks 代码公共的部分分离出来成为一个单独的文件
             cacheGroups: {
                 vendor: {
                     name: 'vendor',

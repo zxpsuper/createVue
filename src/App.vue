@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <a
-      class="github-fork-ribbon right-top"
-      href="https://github.com/zxpsuper/createVue"
-      title="Fork me on GitHub"
-    >Fork me on GitHub</a>
-    <img src="./assets/logo.png" alt>
-    <div class="flex space-around router">
-      <router-link to="/introduce">Introduce</router-link>
-      <router-link to="/me">About me</router-link>
+    <div id="app">
+        <a
+            class="github-fork-ribbon right-top"
+            href="https://github.com/zxpsuper/createVue"
+            title="Fork me on GitHub"
+        >Fork me on GitHub</a>
+        <img src="./assets/logo.png" alt>
+        <div class="flex space-around router">
+            <router-link to="/introduce">Introduce</router-link>
+            <router-link to="/me">About me</router-link>
+        </div>
+        <router-view></router-view>
     </div>
-    <router-view></router-view>
-  </div>
 </template>
 <script>
 import HelloWorld from '@/components/HelloWorld.vue';

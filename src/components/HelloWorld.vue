@@ -1,26 +1,35 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      You can use this to develop your project.
-      <a
-        href="https://github.com/zxpsuper/createVue"
-        target="_blank"
-      >Create Vue</a>.
-    </p>
-    <p>This project will help you create a vue project step by step.</p>
-    <p>You can learn webpack, vue, vue-router, vuex, proxy and so on.</p>
-    <p>I hope that can be helpful for you!! And finally,</p>
-    <h2>Welcome star!</h2>
-    <p>You have stay here for {{count}} second</p>
-    <Throttle :time="1000" events="click">
-      <button @click="onClick($event, 1)" isDebounce>click</button>
-    </Throttle>
-    <date-picker style="margin: 10px auto"></date-picker>
-    <mask-model v-model="ifShowMask">
-      <div style="padding: 20px">Welcome to suporka vue</div>
-    </mask-model>
-  </div>
+    <div class="hello">
+        <h1>{{ msg }}</h1>
+        <p>
+            You can use this to develop your project.
+            <a
+                href="https://github.com/zxpsuper/createVue"
+                target="_blank"
+            >Create Vue</a>.
+        </p>
+        <p>This project will help you create a vue project step by step.</p>
+        <p>You can learn webpack, vue, vue-router, vuex, proxy and so on.</p>
+        <p>I hope that can be helpful for you!! And finally,</p>
+        <h2>Welcome star!</h2>
+        <p>You have stay here for {{count}} second</p>
+        <Throttle :time="1000" events="click">
+            <button @click="onClick($event, 1)" isDebounce>click</button>
+        </Throttle>
+
+        <Throttle :time="1000" events="click">
+            <button @click="ifShowMask = true" isDebounce>open Mask</button>
+        </Throttle>
+
+        <div>{{suporka}}</div>
+        <div>
+            <button @click="suporka += 1">click</button>
+        </div>
+        <date-picker style="margin: 10px auto"></date-picker>
+        <mask-model v-model="ifShowMask">
+            <div style="padding: 20px">Welcome to suporka vue</div>
+        </mask-model>
+    </div>
 </template>
 
 <script>
@@ -39,6 +48,7 @@ export default {
         return {
             val: 0,
             ifShowMask: false,
+            suporka: 1,
         };
     },
     computed: {
@@ -58,7 +68,6 @@ export default {
     mounted() {
         setTimeout(() => {
             this.$eventBus.$emit('home-on', '这是home $emit参数', 'ee');
-            this.ifShowMask = !this.ifShowMask;
         }, 1000);
     },
     methods: {
