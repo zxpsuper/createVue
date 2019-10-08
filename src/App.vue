@@ -5,7 +5,9 @@
             href="https://github.com/zxpsuper/createVue"
             title="Fork me on GitHub"
         >Fork me on GitHub</a>
-        <img src="./assets/logo.png" alt>
+        <transition name="slide-up">
+            <img src="./assets/logo.png" alt v-if="show" style="transition: all 0.3s" />
+        </transition>
         <div class="flex space-around router">
             <router-link to="/introduce">Introduce</router-link>
             <router-link to="/me">About me</router-link>
@@ -16,10 +18,13 @@
 <script>
 import HelloWorld from '@/components/HelloWorld.vue';
 import { mapActions } from 'vuex';
+import { setInterval } from 'timers';
 export default {
     name: 'app',
     data() {
-        return {};
+        return {
+            show: true,
+        };
     },
     components: {
         HelloWorld,
