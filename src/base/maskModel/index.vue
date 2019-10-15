@@ -1,52 +1,52 @@
 <template>
-  <div class="ml-model dg-mask-layer" v-show="visible" :style="{ 'z-index': 1001 }">
-    <template v-if="transition=='middle'">
-      <transition name="dl-middle">
-        <div class="dl-com dl-middle" v-show="value">
-          <slot></slot>
-        </div>
-      </transition>
-    </template>
-    <template v-if="transition=='top'">
-      <transition name="dl-top">
-        <div class="dl-com dl-top" v-show="value">
-          <slot></slot>
-        </div>
-      </transition>
-    </template>
-    <template v-if="transition=='right'">
-      <transition name="dl-right">
-        <div class="dl-com dl-right" v-show="value">
-          <slot></slot>
-        </div>
-      </transition>
-    </template>
-    <template v-if="transition=='bottom'">
-      <transition name="dl-bottom">
-        <div class="dl-com dl-bottom" v-show="value">
-          <slot></slot>
-        </div>
-      </transition>
-    </template>
-    <template v-if="transition=='left'">
-      <transition name="dl-left">
-        <div class="dl-com dl-left" v-show="value">
-          <slot></slot>
-        </div>
-      </transition>
-    </template>
-    <template v-if="['middle','top','left','right','bottom'].indexOf(transition)==-1">
-      <slot></slot>
-    </template>
-    <transition name="dl-opy">
-      <div
-        class="ml-mask-bg"
-        :class="[maskClass,{'ml-mask-clarity':!mask}]"
-        v-show="value"
-        @click="doClickMask"
-      ></div>
-    </transition>
-  </div>
+    <div class="ml-model dg-mask-layer" v-show="visible" :style="{ 'z-index': 1001 }">
+        <template v-if="transition=='middle'">
+            <transition name="dl-middle">
+                <div class="dl-com dl-middle" v-show="value">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-if="transition=='top'">
+            <transition name="dl-top">
+                <div class="dl-com dl-top" v-show="value">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-if="transition=='right'">
+            <transition name="dl-right">
+                <div class="dl-com dl-right" v-show="value">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-if="transition=='bottom'">
+            <transition name="dl-bottom">
+                <div class="dl-com dl-bottom" v-show="value">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-if="transition=='left'">
+            <transition name="dl-left">
+                <div class="dl-com dl-left" v-show="value">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-if="['middle','top','left','right','bottom'].indexOf(transition)==-1">
+            <slot></slot>
+        </template>
+        <transition name="dl-opy">
+            <div
+                class="ml-mask-bg"
+                :class="[maskClass,{'ml-mask-clarity':!mask}]"
+                v-show="value"
+                @click="doClickMask"
+            ></div>
+        </transition>
+    </div>
 </template>
 <script>
 /**
@@ -124,6 +124,9 @@ export default {
             visible: this.value,
             finish: false,
         };
+    },
+    created() {
+        this.finish = this.value;
     },
     methods: {
         /**
