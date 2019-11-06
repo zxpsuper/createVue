@@ -45,3 +45,9 @@ this.$ajax.post(url, data, config);
 加入 `workbox-webpack-plugin` 插件，实现 PWA 离线加载功能
 
 若不需用到，在 `webpack.prod.js` 中删除即可
+
+## 2019/11/07
+
+去除 dev 启动时多余的打印日志，还你一个干净的控制台
+
+解决外网无法通过 IP + 端口访问的问题，默认端口为 8080

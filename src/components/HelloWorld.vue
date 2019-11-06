@@ -13,15 +13,16 @@
         <p>I hope that can be helpful for you!! And finally,</p>
         <h2>Welcome star!</h2>
         <p>You have stay here for {{count}} second</p>
-        <Throttle :time="1000" events="click">
-            <button @click="onClick($event, 1)" isDebounce>click</button>
+        <Throttle :time="5000" events="click">
+            <button @click="onClick($event, 1)" isDebounce v-once>click</button>
         </Throttle>
 
-        <Throttle :time="1000" events="click">
-            <button @click="ifShowMask = true" isDebounce>open Mask</button>
+        <Throttle :time="2000" events="click">
+            <button @click="haha" isDebounce>open Mask</button>
         </Throttle>
 
         <div>{{suporka}}</div>
+        <Suporka :level="1">撒打发沙发</Suporka>
         <div>
             <button @click="suporka += 1">click</button>
         </div>
@@ -71,6 +72,9 @@ export default {
         }, 1000);
     },
     methods: {
+        haha() {
+            this.ifShowMask = true;
+        },
         onClick($ev, val) {
             this.val += val;
             console.log(this.val, new Date());
