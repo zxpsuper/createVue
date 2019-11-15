@@ -42,18 +42,18 @@
 
 #### :sunny:2019/03/29
 
-加入 `copy-webpack-plugin` 插件，设置 static 静态资源文件夹，使其内容打包后存在于打包后的 static 文件夹中
+    加入 `copy-webpack-plugin` 插件，设置 static 静态资源文件夹，使其内容打包后存在于打包后的 static 文件夹中
 
-加入 `babel-preset-es2015` 与 `babel-preset-stage-2` 插件，解决 ...mapActions() 在 methods 中展开无效的问题
+    加入 `babel-preset-es2015` 与 `babel-preset-stage-2` 插件，解决 ...mapActions() 在 methods 中展开无效的问题
 
 #### :sunny:2019/06/11
 
-加入 `workbox-webpack-plugin` 插件，实现 PWA 离线加载功能
+    加入 `workbox-webpack-plugin` 插件，实现 PWA 离线加载功能
 
-若不需用到，在 `webpack.prod.js` 中删除即可
+    若不需用到，在 `webpack.prod.js` 中删除即可
 
 #### :sunny:2019/11/07
 
-去除 dev 启动时多余的打印日志，还你一个干净的控制台
+    去除 dev 启动时多余的打印日志，还你一个干净的控制台
 
-解决外网无法通过 IP + 端口访问的问题，默认端口为 8080
+    解决外网无法通过 IP + 端口访问的问题，默认端口为 8080
