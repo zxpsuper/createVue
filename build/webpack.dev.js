@@ -3,10 +3,10 @@ const common = require('./webpack.base.js');
 const path = require('path');
 const open = require('opn'); //打开浏览器
 const chalk = require('chalk'); // 改变命令行中输出日志颜色插件
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(common, {
     devtool: 'inline-source-map',
-    stats: 'errors-only',
     devServer: {
         port: 8080,
         contentBase: '../dist',
@@ -65,5 +65,6 @@ module.exports = merge(common, {
             },
         ],
     },
+    plugins: [new FriendlyErrorsWebpackPlugin()],
     mode: 'development',
 });

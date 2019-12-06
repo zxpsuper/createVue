@@ -69,8 +69,8 @@ module.exports = {
             },
         ]),
 
-        // 暂时看不到dll的效果
-        /* new AddAssetHtmlWebpackPlugin({
+        /* // dll的配置
+        new AddAssetHtmlWebpackPlugin({
             filepath: path.resolve(__dirname, '../dll/normal.dll.js'), // 对应的 dll 文件路径
         }),
         new webpack.DllReferencePlugin({

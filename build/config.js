@@ -1,8 +1,4 @@
 export default {
-    dev: {
-        API_HOST: 'http://localhost:8080',
-    },
-    prod: {
-        API_HOST: 'http://localhost:8080',
-    },
+    openPWA: false, // 开启pwa
+    showBuildReport: false, // 展示打包报告
 };

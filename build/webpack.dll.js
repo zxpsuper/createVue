@@ -12,7 +12,7 @@ module.exports = {
     mode: 'production',
     entry: {
         // 定义程序中打包公共文件的入口文件vendor.js
-        normal: ['vue', 'vue-router'],
+        normal: ['vue', 'vue-router', 'vuex', 'axios'],
     },
 
     output: {

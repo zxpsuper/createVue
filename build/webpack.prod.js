@@ -12,6 +12,52 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const WorkboxPlugin = require('workbox-webpack-plugin'); // 引入 PWA 插件
+
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
+
+const config = require('./config.js');
+
+var plugins = [
+    new HardSourceWebpackPlugin(),
+    new CleanWebpackPlugin(['dist/*'], {
+        root: path.resolve(__dirname, '../'),
+    }),
+    new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: 'css/[name].[hash].css',
+        chunkFilename: 'css/[id].[hash].css',
+    }),
+];
+// 开启pwa
+if (config.openPWA) {
+    plugins.push(
+        // 配置 PWA
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+        })
+    );
+}
+// 开启打包后分析
+if (config.showBuildReport) {
+    plugins.push(
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            analyzerHost: '127.0.0.1',
+            analyzerPort: 8888,
+            reportFilename: 'report.html',
+            defaultSizes: 'parsed',
+            generateStatsFile: false,
+            statsFilename: 'stats.json',
+            statsOptions: null,
+            logLevel: 'info',
+        })
+    );
+}
 module.exports = merge(common, {
     optimization: {
         // 分离chunks
@@ -35,8 +81,8 @@ module.exports = merge(common, {
                         drop_console: true,
                     },
                 },
-                cache: true,
-                parallel: true,
+                cache: true, // 开启缓存
+                parallel: true, // 允许并发
                 sourceMap: false, // set to true if you want JS source maps
             }),
             new OptimizeCSSAssetsPlugin({}),
@@ -111,22 +157,7 @@ module.exports = merge(common, {
             },
         ],
     },
-    plugins: [
-        new CleanWebpackPlugin(['dist/*'], {
-            root: path.resolve(__dirname, '../'),
-        }),
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: 'css/[name].[hash].css',
-            chunkFilename: 'css/[id].[hash].css',
-        }),
-        // 配置 PWA
-        new WorkboxPlugin.GenerateSW({
-            clientsClaim: true,
-            skipWaiting: true,
-        }),
-    ],
+    plugins: plugins,
     mode: 'production',
     output: {
         filename: 'js/[name].[contenthash].js',

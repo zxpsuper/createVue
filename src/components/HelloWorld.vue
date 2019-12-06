@@ -3,16 +3,15 @@
         <h1>{{ msg }}</h1>
         <p>
             You can use this to develop your project.
-            <a
-                href="https://github.com/zxpsuper/createVue"
-                target="_blank"
-            >Create Vue</a>.
+            <a href="https://github.com/zxpsuper/createVue" target="_blank"
+                >Create Vue</a
+            >.
         </p>
         <p>This project will help you create a vue project step by step.</p>
         <p>You can learn webpack, vue, vue-router, vuex, proxy and so on.</p>
         <p>I hope that can be helpful for you!! And finally,</p>
         <h2>Welcome star!</h2>
-        <p>You have stay here for {{count}} second</p>
+        <p>You have stay here for {{ count }} second</p>
         <Throttle :time="5000" events="click">
             <button @click="onClick($event, 1)" isDebounce v-once>click</button>
         </Throttle>
@@ -21,8 +20,7 @@
             <button @click="haha" isDebounce>open Mask</button>
         </Throttle>
 
-        <div>{{suporka}}</div>
-        <Suporka :level="1">撒打发沙发</Suporka>
+        <div>{{ suporka }}</div>
         <div>
             <button @click="suporka += 1">click</button>
         </div>

@@ -4,9 +4,15 @@
             class="github-fork-ribbon right-top"
             href="https://github.com/zxpsuper/createVue"
             title="Fork me on GitHub"
-        >Fork me on GitHub</a>
+            >Fork me on GitHub</a
+        >
         <transition name="slide-up">
-            <img src="./assets/logo.png" alt v-if="show" style="transition: all 0.3s" />
+            <img
+                src="./assets/logo.png"
+                alt
+                v-if="show"
+                style="transition: all 0.3s"
+            />
         </transition>
         <div class="flex space-around router">
             <router-link to="/introduce">Introduce</router-link>
