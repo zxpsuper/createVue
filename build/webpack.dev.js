@@ -25,6 +25,12 @@ module.exports = merge(common, {
                     console.log(chalk.red(err));
                 });
         },
+        historyApiFallback:{
+            rewrites:[
+                {from:/./,to:'/index.html'}
+            ]
+            
+        }
     },
     output: {
         filename: 'js/[name].[hash].js',
