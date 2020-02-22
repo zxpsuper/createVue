@@ -17,6 +17,7 @@
         <div class="flex space-around router">
             <router-link to="/introduce">Introduce</router-link>
             <router-link to="/me">About me</router-link>
+            <router-link to="/loadmore">loadmore</router-link>
         </div>
         <router-view></router-view>
     </div>

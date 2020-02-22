@@ -104,3 +104,7 @@ npm run build
 > HardSourceWebpackPlugin 是 webpack 的插件，为模块提供中间缓存步骤。为了查看结果，您需要使用此插件运行 webpack 两次：第一次构建将花费正常的时间。第二次构建将显着加快（大概提升 90%的构建速度）
 
 -   恢复开发时控制台的打印日志，由于 stats 设置为 errors-only 时导致热更新失效，因此恢复打印日志，解决方法暂未找到
+
+#### :sunny:2020/02/19
+
+- 修改 dev 配置文件，使其支持 vue-router 的 history 模式
