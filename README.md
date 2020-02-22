@@ -1,20 +1,40 @@
-## createVue
+# createVue
 
-本项目基于 webpack4 搭建 vue 项目。
+## 项目介绍
 
-[相关文章](https://blog.csdn.net/weixin_38788347/article/details/80882432)
+- 本项目基于 webpack4 搭建 vue 项目。
 
-你可以用此项目搭建属于你的项目！！
+- 关于如何搭建此项目，我也写了一篇文章简单介绍，[相关文章](https://blog.csdn.net/weixin_38788347/article/details/80882432)，当前项目会不断更新，不断完善，欢迎提出问题和建议
 
-**欢迎 star!**
+- 你可以用此项目搭建属于你的项目！！
+
+- 熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^_−)☆
 
 **另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
 
-#### 使用方法：
+<div>
+  <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
+</div>
+
+
+**备注：**
+
+> 在 github 项目的右上角，有三个按钮,分别是 watch、star、fork，新来的同学注意不要用错了，无休止的邮件提醒会给你造成不必要的信息干扰。
+>
+> 当你选择 Watching，表示你以后会关注这个项目的全部动态，以后只要这个项目发生变动，被别人提交了 pull request、被发起了 issue 等情况你都会收到邮件通知。
+>
+> star 相当于是点赞或收藏，方便以后查找。
+>
+> fork 表示你想要补充完善这个项目的内容。
+
+![](https://github.com/zxpsuper/Demo/blob/master/images/fork_and_star.jpg)
+
+## 使用方法：
 
 ```
+# 克隆项目
 git clone https://github.com/zxpsuper/createVue.git
-
+# 进入文件夹
 cd createVue
 
 # 安装依赖
@@ -108,3 +128,18 @@ npm run build
 #### :sunny:2020/02/19
 
 - 修改 dev 配置文件，使其支持 vue-router 的 history 模式
+
+
+## 关于作者 :boy:
+
+作者： 小皮咖
+
+Email：zxpscau@163.com
+
+Github: https://github.com/zxpsuper
+
+知乎：https://www.zhihu.com/people/super-32-94-54/activities
+
+掘金：https://juejin.im/user/5af17df4518825672a02e1f5
+
+对内容有任何疑问，欢迎联系我。
