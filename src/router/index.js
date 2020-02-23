@@ -7,7 +7,7 @@ const HelloWorld = () => import("@/components/HelloWorld.vue");
 const Me = () => import("@/components/Me.vue");
 const LoadMore = () => import('@/components/LoadMoreTest.vue');
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes: [
         { path: '/', redirect: { name: 'introduce' } },
         {

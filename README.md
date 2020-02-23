@@ -129,6 +129,9 @@ npm run build
 
 - 修改 dev 配置文件，使其支持 vue-router 的 history 模式
 
+#### :sunny:2020/02/22
+
+- 修复bug，设置 vue-router 默认为 hash 模式
 
 ## 关于作者 :boy:
 
