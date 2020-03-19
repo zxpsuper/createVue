@@ -2,20 +2,19 @@
 
 ## 项目介绍
 
-- 本项目基于 webpack4 搭建 vue 项目。
+-   本项目基于 webpack4 搭建 vue 项目。
 
-- 关于如何搭建此项目，我也写了一篇文章简单介绍，[相关文章](https://blog.csdn.net/weixin_38788347/article/details/80882432)，当前项目会不断更新，不断完善，欢迎提出问题和建议
+-   关于如何搭建此项目，我也写了一篇文章简单介绍，[相关文章](https://blog.csdn.net/weixin_38788347/article/details/80882432)，当前项目会不断更新，不断完善，欢迎提出问题和建议
 
-- 你可以用此项目搭建属于你的项目！！
+-   你可以用此项目搭建属于你的项目！！
 
-- 熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^_−)☆
+-   熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^\_−)☆
 
 **另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
 
 <div>
   <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
 </div>
-
 
 **备注：**
 
@@ -72,9 +71,9 @@ npm run build
     ```js
     // 使用方法,两者均为 promise
 
-    this.$ajax.get(url, data, config);
+    this.$ajax.get(url, data, config)
 
-    this.$ajax.post(url, data, config);
+    this.$ajax.post(url, data, config)
     ```
 
 #### :sunny:2019/03/29
@@ -127,11 +126,15 @@ npm run build
 
 #### :sunny:2020/02/19
 
-- 修改 dev 配置文件，使其支持 vue-router 的 history 模式
+-   修改 dev 配置文件，使其支持 vue-router 的 history 模式
 
 #### :sunny:2020/02/22
 
-- 修复bug，设置 vue-router 默认为 hash 模式
+-   修复 bug，设置 vue-router 默认为 hash 模式
+
+#### :sunny:2020/03/20
+
+-   系统工程添加代码格式化，vscode 设置 `editor.formatOnSave:true`
 
 ## 关于作者 :boy:
 
