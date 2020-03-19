@@ -9,7 +9,7 @@ import Throttle from '@/base/throttle/index.js'
 import EvenBus from '@/base/evenBus/index.js'
 import './index.scss'
 
-console.log(2123)
+console.log(2122213223)
 // 注册路由
 Vue.use(VueRouter)
 Vue.use(EvenBus)
