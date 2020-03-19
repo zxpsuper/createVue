@@ -159,6 +159,7 @@ export default {
             this.dateValue = this.formatDate(new Date(this.value).getTime());
         }
         window.addEventListener('click', this.eventListener);
+        console.log('$attr', this.$attrs)
     },
     methods: {
         openPanel() {

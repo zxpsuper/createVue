@@ -68,6 +68,7 @@ export default {
         this.$ajax.get('../static/head.json', {}).then(res => {
             console.log(res);
         });
+        
     },
     methods: {
         ...mapActions(['countUp']),

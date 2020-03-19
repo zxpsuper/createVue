@@ -21,6 +21,8 @@
         </Throttle>
 
         <div>{{ suporka }}</div>
+        
+        <img :src="item" alt="" v-for="item in imgArr">
         <div>
             <button @click="suporka += 1">click</button>
         </div>
@@ -48,6 +50,9 @@ export default {
             val: 0,
             ifShowMask: false,
             suporka: 1,
+            imgArr: [
+                
+            ]
         };
     },
     computed: {
@@ -63,11 +68,20 @@ export default {
             },
             this
         );
+        
     },
     mounted() {
         setTimeout(() => {
             this.$eventBus.$emit('home-on', '这是home $emit参数', 'ee');
         }, 1000);
+        setTimeout(() => {
+            this.imgArr = [
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583740305880&di=50de536ed7fc65ba81908d62a8c9b602&imgtype=0&src=http%3A%2F%2F7776175.s21i.faiusr.com%2F2%2Fabuiabacgaagy_n_tguo2ilwnjcgbziaba.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583740305880&di=bedeb548d576b3824275076e559ba394&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171108%2F3fe473acfc39476db58fadd7fbaf97ff.jpeg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583740305880&di=afa12cdf2eb1f62339476af47d1f02d2&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180703%2F4669d3d7dec3494ebcd87f342ba9dc1b.jpeg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583740305879&di=d745fa20c5ef525e0f1c265566cacdf5&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2Ff47d9b1af8b8c790a6a1ebdde3f0c0943d726869.jpg'
+            ]
+        }, 1500);
     },
     methods: {
         haha() {
