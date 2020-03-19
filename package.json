@@ -75,8 +75,7 @@
     "lint-staged": {
         "src/**/*.{js,json,css,vue}": [
             "prettier --write",
-            "eslint --fix",
-            "git add"
+            "eslint --fix"
         ]
     },
     "dependencies": {

@@ -136,9 +136,9 @@ npm run build
 
 -   系统工程添加代码格式化，vscode 设置 `editor.formatOnSave:true` 使开发过程中保存自动格式化代码
 
--   添加 `eslint husky prettier` 格式化代码，具体操作流程，`git add 文件` => `npm run commit` => `git push`
+-   添加 `eslint husky prettier` 格式化代码，具体操作流程，`git add 文件` => `npm run commit` => `git push`,
 
-**注： 若 eslint 报错，则全局注册试试**
+**注： 若 eslint 报错，则全局注册试试；如无法触发代码校验，执行 npm rebuild**
 
 ## 关于作者 :boy:
 
