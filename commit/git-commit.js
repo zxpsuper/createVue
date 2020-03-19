@@ -7,7 +7,7 @@ async function gitCommit() {
   let { msg } = await inquirer.prompt(prompsConfig.ciMsg);
 
   shell.exec(`git commit -m "${type} ${msg}"`, function() {
-    console.log(`\n提交脚本: git commit -m "${type} ${msg}"`);
+    console.log(`\n提交脚本: git commit -m "${type}:${msg}"`);
   });
 }
 

@@ -132,9 +132,13 @@ npm run build
 
 -   修复 bug，设置 vue-router 默认为 hash 模式
 
-#### :sunny:2020/03/20
+#### :sunny:2020/03/19
 
--   系统工程添加代码格式化，vscode 设置 `editor.formatOnSave:true`
+-   系统工程添加代码格式化，vscode 设置 `editor.formatOnSave:true` 使开发过程中保存自动格式化代码
+
+-   添加 `eslint husky prettier` 格式化代码
+
+**注： 若 eslint 报错，则全局注册试试**
 
 ## 关于作者 :boy:
 

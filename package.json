@@ -4,6 +4,7 @@
   "description": "none",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline --config build/webpack.dev.js --api_env botme",
     "commit": "node commit/git-commit.js",
@@ -35,17 +36,21 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^1.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^7.0.0-alpha.0",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "happypack": "^5.0.0",
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.3",
     "image-webpack-loader": "^4.3.1",
     "inquirer": "^6.2.1",
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
+    "lint-staged": "^10.0.8",
     "mini-css-extract-plugin": "^0.4.1",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.1.0",
@@ -61,6 +66,13 @@
     "webpack-dev-server": "^3.3.0",
     "webpack-merge": "^4.1.4",
     "workbox-webpack-plugin": "^4.3.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,css,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "axios": "^0.19.2",
