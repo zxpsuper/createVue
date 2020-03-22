@@ -138,6 +138,13 @@ npm run build
 
 -   添加 `eslint husky prettier` 格式化代码，具体操作流程，`git add 文件` => `npm run commit` => `git push`,
 
+
+#### :sunny:2020/03/22
+
+-   增加白屏，首屏时间的统计功能
+
+-   修复时间选择器为：选择弹窗不占据文档流
+
 **注： 若 eslint 报错，则全局注册试试；如无法触发代码校验，执行 npm rebuild**
 
 ## 关于作者 :boy:
