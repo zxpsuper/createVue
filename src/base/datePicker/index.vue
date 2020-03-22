@@ -1,56 +1,81 @@
 <template>
-  <div class="date-picker" @click.stop>
-    <input class="input" v-model="dateValue" @click="openPanel">
-    <!-- 动画特效 -->
-    <transition name="fadeDownBig">
-      <div class="date-panel" v-show="panelState">
-        <div class="topbar">
-          <span @click="leftBig">&lt;&lt;</span>
-          <span @click="left">&lt;</span>
-          <span class="year" @click="panelType = 'year'">{{tmpYear}}</span>
-          <span class="month" @click="panelType = 'month'">{{changeTmpMonth}}</span>
-          <span @click="right">&gt;</span>
-          <span @click="rightBig">&gt;&gt;</span>
-        </div>
-        <!-- 年面板 -->
-        <div class="type-year" v-show="panelType === 'year'">
-          <ul class="year-list">
-            <li v-for="(item, index) in yearList" :key="index" @click="selectYear(item)">
-              <span :class="{selected: item === tmpYear}">{{item}}</span>
-            </li>
-          </ul>
-        </div>
-        <!-- 月面板 -->
-        <div class="type-year" v-show="panelType === 'month'">
-          <ul class="year-list">
-            <li v-for="(item, index) in monthList" :key="index" @click="selectMonth(item)">
-              <span
-                :class="{selected: item.value === tmpMonth}"
-              >{{lang === 'cn' ? item.labelCn: item.label}}</span>
-            </li>
-          </ul>
-        </div>
-        <!-- 日期面板 -->
-        <div class="date-group" v-show="panelType === 'date'">
-          <span
-            v-for="(item, index) in weekList"
-            :key="index"
-            class="weekday"
-          >{{lang === 'cn' ? item.labelCn: item.label}}</span>
-          <ul class="date-list">
-            <li
-              v-for="(item, index) in dateList"
-              v-text="item.value"
-              :class="{preMonth: item.previousMonth, nextMonth: item.nextMonth,
-                selected: date === item.value && month === tmpMonth && item.currentMonth, invalid: validateDate(item)}"
-              :key="index"
-              @click="selectDate(item)"
-            ></li>
-          </ul>
-        </div>
-      </div>
-    </transition>
-  </div>
+    <div class="date-picker" @click.stop>
+        <input class="input" v-model="dateValue" @click="openPanel" />
+        <!-- 动画特效 -->
+        <transition name="fadeDownBig">
+            <div class="date-panel" v-show="panelState">
+                <div class="topbar">
+                    <span @click="leftBig">&lt;&lt;</span>
+                    <span @click="left">&lt;</span>
+                    <span class="year" @click="panelType = 'year'">{{
+                        tmpYear
+                    }}</span>
+                    <span class="month" @click="panelType = 'month'">{{
+                        changeTmpMonth
+                    }}</span>
+                    <span @click="right">&gt;</span>
+                    <span @click="rightBig">&gt;&gt;</span>
+                </div>
+                <!-- 年面板 -->
+                <div class="type-year" v-show="panelType === 'year'">
+                    <ul class="year-list">
+                        <li
+                            v-for="(item, index) in yearList"
+                            :key="index"
+                            @click="selectYear(item)"
+                        >
+                            <span :class="{ selected: item === tmpYear }">{{
+                                item
+                            }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 月面板 -->
+                <div class="type-year" v-show="panelType === 'month'">
+                    <ul class="year-list">
+                        <li
+                            v-for="(item, index) in monthList"
+                            :key="index"
+                            @click="selectMonth(item)"
+                        >
+                            <span
+                                :class="{ selected: item.value === tmpMonth }"
+                                >{{
+                                    lang === 'cn' ? item.labelCn : item.label
+                                }}</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <!-- 日期面板 -->
+                <div class="date-group" v-show="panelType === 'date'">
+                    <span
+                        v-for="(item, index) in weekList"
+                        :key="index"
+                        class="weekday"
+                        >{{ lang === 'cn' ? item.labelCn : item.label }}</span
+                    >
+                    <ul class="date-list">
+                        <li
+                            v-for="(item, index) in dateList"
+                            v-text="item.value"
+                            :class="{
+                                preMonth: item.previousMonth,
+                                nextMonth: item.nextMonth,
+                                selected:
+                                    date === item.value &&
+                                    month === tmpMonth &&
+                                    item.currentMonth,
+                                invalid: validateDate(item),
+                            }"
+                            :key="index"
+                            @click="selectDate(item)"
+                        ></li>
+                    </ul>
+                </div>
+            </div>
+        </transition>
+    </div>
 </template>
 
 <script>
@@ -88,7 +113,7 @@ export default {
             ], // 月
             nowValue: 0, // 当前选中日期值
             panelType: 'date', // 面板状态
-        };
+        }
     },
     props: {
         value: {
@@ -111,7 +136,7 @@ export default {
                 this.tmpYear,
                 this.tmpMonth + 1,
                 0
-            ).getDate();
+            ).getDate()
             //先将当月的日期塞入dateList
             let dateList = Array.from(
                 { length: currentMonthLength },
@@ -119,113 +144,109 @@ export default {
                     return {
                         currentMonth: true,
                         value: index + 1,
-                    };
+                    }
                 }
-            );
+            )
             // 获取当月1号的星期是为了确定在1号前需要插多少天
-            let startDay = new Date(this.tmpYear, this.tmpMonth, 1).getDay();
+            let startDay = new Date(this.tmpYear, this.tmpMonth, 1).getDay()
             // 确认上个月一共多少天
             let previousMongthLength = new Date(
                 this.tmpYear,
                 this.tmpMonth,
                 0
-            ).getDate();
+            ).getDate()
             // 在1号前插入上个月日期
             for (let i = 0, len = startDay; i < len; i++) {
                 dateList = [
                     { previousMonth: true, value: previousMongthLength - i },
-                ].concat(dateList);
+                ].concat(dateList)
             }
             // 补全剩余位置
             for (let i = 1, item = 1; i < 15; i++, item++) {
-                dateList[dateList.length] = { nextMonth: true, value: i };
+                dateList[dateList.length] = { nextMonth: true, value: i }
             }
-            return dateList;
+            return dateList
         },
         changeTmpMonth() {
             return this.lang === 'cn'
                 ? this.monthList[this.tmpMonth].labelCn
-                : this.monthList[this.tmpMonth].label;
+                : this.monthList[this.tmpMonth].label
         },
         yearList() {
             return Array.from(
                 { length: 12 },
                 (value, index) => this.tmpYear + index
-            );
+            )
         },
     },
     mounted() {
         if (this.value) {
-            this.dateValue = this.formatDate(new Date(this.value).getTime());
+            this.dateValue = this.formatDate(new Date(this.value).getTime())
         }
-        window.addEventListener('click', this.eventListener);
+        window.addEventListener('click', this.eventListener)
         console.log('$attr', this.$attrs)
     },
     methods: {
         openPanel() {
-            this.panelState = !this.panelState;
-            this.panelType = 'date';
+            this.panelState = !this.panelState
+            this.panelType = 'date'
         },
         left() {
-            if (this.panelType === 'year') this.tmpYear--;
+            if (this.panelType === 'year') this.tmpYear--
             else {
                 if (this.tmpMonth === 0) {
-                    this.tmpYear--;
-                    this.tmpMonth = 11;
-                } else this.tmpMonth--;
+                    this.tmpYear--
+                    this.tmpMonth = 11
+                } else this.tmpMonth--
             }
         },
         leftBig() {
-            if (this.panelType === 'year') this.tmpYear -= 12;
-            else this.tmpYear--;
+            if (this.panelType === 'year') this.tmpYear -= 12
+            else this.tmpYear--
         },
         right() {
-            if (this.panelType === 'year') this.tmpYear++;
+            if (this.panelType === 'year') this.tmpYear++
             else {
                 if (this.tmpMonth === 11) {
-                    this.tmpYear++;
-                    this.tmpMonth = 0;
-                } else this.tmpMonth++;
+                    this.tmpYear++
+                    this.tmpMonth = 0
+                } else this.tmpMonth++
             }
         },
         rightBig() {
-            if (this.panelType === 'year') this.tmpYear += 12;
-            else this.tmpYear++;
+            if (this.panelType === 'year') this.tmpYear += 12
+            else this.tmpYear++
         },
         eventListener() {
-            this.panelState = false;
+            this.panelState = false
         },
         validateDate(item) {
-            if (this.nowValue === item.value && item.currentMonth) return true;
+            if (this.nowValue === item.value && item.currentMonth) return true
         },
         selectDate(item) {
-            this.nowValue = item.value;
-            if (item.previousMonth) this.tmpMonth--;
-            if (item.nextMonth) this.tmpMonth++;
-            let selectDay = new Date(
-                this.tmpYear,
-                this.tmpMonth,
-                this.nowValue
-            );
-            console.log(selectDay.getTime());
-            this.dateValue = this.formatDate(selectDay.getTime());
-            this.panelState = !this.panelState;
-            this.$emit('input', selectDay);
+            this.nowValue = item.value
+            if (item.previousMonth) this.tmpMonth--
+            if (item.nextMonth) this.tmpMonth++
+            let selectDay = new Date(this.tmpYear, this.tmpMonth, this.nowValue)
+            console.log(selectDay.getTime())
+            this.dateValue = this.formatDate(selectDay.getTime())
+            this.panelState = !this.panelState
+            this.$emit('input', selectDay)
         },
         selectYear(item) {
-            this.tmpYear = item;
-            this.panelType = 'month';
+            this.tmpYear = item
+            this.panelType = 'month'
         },
         selectMonth(item) {
-            this.tmpMonth = item.value;
-            this.panelType = 'date';
+            this.tmpMonth = item.value
+            this.panelType = 'date'
         },
         formatDate(date, fmt = this.format) {
             // 长度为10的时候末尾补3个0
             if (date === null || date === 'null') {
-                return '--';
+                return '--'
             }
-            date = new Date(Number(date));
+            date = new Date(Number(date))
             var o = {
                 'M+': date.getMonth() + 1, // 月份
                 'd+': date.getDate(), // 日
@@ -234,12 +255,12 @@ export default {
                 's+': date.getSeconds(), // 秒
                 'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
                 S: date.getMilliseconds(), // 毫秒
-            };
+            }
             if (/(y+)/.test(fmt))
                 fmt = fmt.replace(
                     RegExp.$1,
                     (date.getFullYear() + '').substr(4 - RegExp.$1.length)
-                );
+                )
             for (var k in o) {
                 if (new RegExp('(' + k + ')').test(fmt))
                     fmt = fmt.replace(
@@ -247,15 +268,15 @@ export default {
                         RegExp.$1.length === 1
                             ? o[k]
                             : ('00' + o[k]).substr(('' + o[k]).length)
-                    );
+                    )
             }
-            return fmt;
+            return fmt
         },
     },
     destroyed() {
-        window.removeEventListener('click', this.eventListener);
+        window.removeEventListener('click', this.eventListener)
     },
-};
+}
 </script>
 <style scoped>
 .topbar {
@@ -314,8 +335,11 @@ export default {
     width: 210px;
     text-align: center;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    position: relative;
 }
 .date-panel {
+    position: absolute;
+    top: 100%;
     width: 210px;
     box-shadow: 0 0 8px #ccc;
     background: #fff;
