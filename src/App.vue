@@ -23,21 +23,23 @@
     </div>
 </template>
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
-import { mapActions } from 'vuex';
-import { setInterval } from 'timers';
+// import HelloWorld from '@/components/HelloWorld.vue'
+import { mapActions } from 'vuex'
+import { setInterval } from 'timers'
+
 export default {
     name: 'app',
     data() {
         return {
             show: true,
-        };
+        }
     },
     components: {
-        HelloWorld,
+        // HelloWorld,
     },
     created() {
-        console.log(process.env.NODE_ENV);
+        /* eslint-disable */
+        console.log(process.env.NODE_ENV)
         // get 请求
         this.$ajax
             .get(
@@ -45,8 +47,8 @@ export default {
                 {}
             )
             .then(res => {
-                console.log(res);
-            });
+                console.log(res)
+            })
         // post 请求
         this.$ajax
             .post(
@@ -54,29 +56,28 @@ export default {
                 {}
             )
             .then(res => {
-                console.log(res);
+                console.log(res)
             })
             .catch(err => {
-                console.log(err);
-            });
+                console.log(err)
+            })
 
         this.timer = setInterval(() => {
             // this.$store.dispatch('countUp');
-            this.countUp(); // 两种方法，一种直接commit,一种通过 mapActions([]) 引入至methods中后再使用
-        }, 1000);
+            this.countUp() // 两种方法，一种直接commit,一种通过 mapActions([]) 引入至methods中后再使用
+        }, 1000)
 
         this.$ajax.get('../static/head.json', {}).then(res => {
-            console.log(res);
-        });
-        
+            console.log(res)
+        })
     },
     methods: {
         ...mapActions(['countUp']),
     },
     destroyed() {
-        clearTimeout(this.timer);
+        clearTimeout(this.timer)
     },
-};
+}
 </script>
 
 <style scoped lang="less">

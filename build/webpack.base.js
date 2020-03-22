@@ -10,7 +10,7 @@ const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 // 暂时看不到dll的效果，等待下次测试
 // const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 
@@ -39,6 +39,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new HardSourceWebpackPlugin(),
         // 请确保引入这个插件来施展魔法
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
@@ -91,4 +92,4 @@ module.exports = {
             '@': resolve('src'),
         },
     },
-};
+}
