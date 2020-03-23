@@ -1,10 +1,10 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.base.js');
-const path = require('path');
-const open = require('opn'); //打开浏览器
-const chalk = require('chalk'); // 改变命令行中输出日志颜色插件
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-
+const merge = require('webpack-merge')
+const common = require('./webpack.base.js')
+const path = require('path')
+const open = require('opn') //打开浏览器
+const chalk = require('chalk') // 改变命令行中输出日志颜色插件
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
@@ -19,18 +19,15 @@ module.exports = merge(common, {
                         chalk.cyan(
                             '成功打开链接： http://localhost:' + this.port
                         )
-                    );
+                    )
                 })
                 .catch(err => {
-                    console.log(chalk.red(err));
-                });
+                    console.log(chalk.red(err))
+                })
         },
-        historyApiFallback:{
-            rewrites:[
-                {from:/./,to:'/index.html'}
-            ]
-            
-        }
+        historyApiFallback: {
+            rewrites: [{ from: /./, to: '/index.html' }],
+        },
     },
     output: {
         filename: 'js/[name].[hash].js',
@@ -71,6 +68,6 @@ module.exports = merge(common, {
             },
         ],
     },
-    plugins: [new FriendlyErrorsWebpackPlugin()],
+    plugins: [new FriendlyErrorsWebpackPlugin(), new HardSourceWebpackPlugin()],
     mode: 'development',
-});
+})

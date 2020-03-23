@@ -9,7 +9,8 @@
         "start": "webpack-dev-server --hot --inline --config build/webpack.dev.js --api_env botme",
         "commit": "node commit/git-commit.js",
         "build:dll": "webpack --config ./build/webpack.dll.js",
-        "build": "webpack --config build/webpack.prod.js"
+        "build": "webpack --config build/webpack.prod.js",
+        "publish": "npm run build && node commit/publish.js"
     },
     "husky": {
         "hooks": {
@@ -45,6 +46,7 @@
         "eslint-plugin-vue": "^7.0.0-alpha.0",
         "file-loader": "^1.1.11",
         "friendly-errors-webpack-plugin": "^1.7.0",
+        "gh-pages": "^2.2.0",
         "happypack": "^5.0.0",
         "hard-source-webpack-plugin": "^0.13.1",
         "html-webpack-plugin": "^3.2.0",

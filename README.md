@@ -138,6 +138,7 @@ npm run build
 
 -   添加 `eslint husky prettier` 格式化代码，具体操作流程，`git add 文件` => `npm run commit` => `git push`,
 
+**注： 若 eslint 报错，则全局注册试试；如无法触发代码校验，执行 npm rebuild**
 
 #### :sunny:2020/03/22
 
@@ -145,7 +146,9 @@ npm run build
 
 -   修复时间选择器为：选择弹窗不占据文档流
 
-**注： 若 eslint 报错，则全局注册试试；如无法触发代码校验，执行 npm rebuild**
+#### :sunny:2020/03/23
+
+-   增加 gh-pages 分支，用于显示打包后文件
 
 ## 关于作者 :boy:
 

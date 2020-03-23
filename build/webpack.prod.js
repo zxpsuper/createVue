@@ -1,27 +1,24 @@
-const path = require('path');
+const path = require('path')
 // 合并配置文件
-const merge = require('webpack-merge');
-const common = require('./webpack.base.js');
+const merge = require('webpack-merge')
+const common = require('./webpack.base.js')
 // 打包之前清除文件
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 // 压缩CSS插件
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // 压缩CSS和JS代码
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const WorkboxPlugin = require('workbox-webpack-plugin'); // 引入 PWA 插件
-
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin') // 引入 PWA 插件
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-    .BundleAnalyzerPlugin;
+    .BundleAnalyzerPlugin
 
-const config = require('./config.js');
+const config = require('./config.js')
 
 var plugins = [
-    new HardSourceWebpackPlugin(),
     new CleanWebpackPlugin(['dist/*'], {
         root: path.resolve(__dirname, '../'),
     }),
@@ -31,7 +28,7 @@ var plugins = [
         filename: 'css/[name].[hash].css',
         chunkFilename: 'css/[id].[hash].css',
     }),
-];
+]
 // 开启pwa
 if (config.openPWA) {
     plugins.push(
@@ -40,7 +37,7 @@ if (config.openPWA) {
             clientsClaim: true,
             skipWaiting: true,
         })
-    );
+    )
 }
 // 开启打包后分析
 if (config.showBuildReport) {
@@ -56,7 +53,7 @@ if (config.showBuildReport) {
             statsOptions: null,
             logLevel: 'info',
         })
-    );
+    )
 }
 module.exports = merge(common, {
     optimization: {
@@ -163,4 +160,4 @@ module.exports = merge(common, {
         filename: 'js/[name].[contenthash].js',
         path: path.resolve(__dirname, '../dist'),
     },
-});
+})
