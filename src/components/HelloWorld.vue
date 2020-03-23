@@ -1,5 +1,16 @@
 <template>
     <div class="hello">
+        <div style="margin: 10px auto; width: 200px;">
+            <ScrollBox style="width: 200px; height: 200px; overflow: hidden;">
+                <img
+                    :src="item"
+                    alt
+                    v-for="item in imgArr"
+                    :key="item"
+                    style="width: 100%;"
+                />
+            </ScrollBox>
+        </div>
         <h1>{{ msg }}</h1>
         <p>
             You can use this to develop your project.
@@ -44,9 +55,10 @@
 <script>
 import DatePicker from '@/base/datePicker/index.vue'
 import MaskModel from '@/base/maskModel'
+import ScrollBox from '@/base/scrollBox/index.vue'
 export default {
     name: 'HelloWorld',
-    components: { DatePicker, MaskModel },
+    components: { DatePicker, MaskModel, ScrollBox },
     props: {
         msg: {
             type: String,
