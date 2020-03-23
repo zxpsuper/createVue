@@ -4,7 +4,7 @@ const path = require('path')
 const open = require('opn') //打开浏览器
 const chalk = require('chalk') // 改变命令行中输出日志颜色插件
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
@@ -12,6 +12,7 @@ module.exports = merge(common, {
         contentBase: '../dist',
         host: '0.0.0.0',
         overlay: true,
+        stats: 'errors-only',
         after() {
             open('http://localhost:' + this.port)
                 .then(() => {
@@ -68,6 +69,6 @@ module.exports = merge(common, {
             },
         ],
     },
-    plugins: [new FriendlyErrorsWebpackPlugin(), new HardSourceWebpackPlugin()],
+    plugins: [new FriendlyErrorsWebpackPlugin()],
     mode: 'development',
 })

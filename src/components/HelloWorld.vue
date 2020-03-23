@@ -25,15 +25,15 @@
         <div>
             <button @click="suporka += 1">click</button>
         </div>
-        <date-picker style="margin: 10px auto"></date-picker>
+        <date-picker style="margin: 10px auto;"></date-picker>
         <mask-model v-model="ifShowMask">
-            <div style="padding: 20px">Welcome to suporka vue</div>
+            <div style="padding: 20px;">Welcome to suporka vue</div>
         </mask-model>
         <h2>以下用于测试首屏时间：</h2>
         <h3>在控制台输入：whiteScreenTime.showData() 即可查看</h3>
         <img
             :src="item"
-            alt=""
+            alt
             v-for="item in imgArr"
             class="test-img"
             :key="item"

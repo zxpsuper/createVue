@@ -150,6 +150,10 @@ npm run build
 
 -   增加 gh-pages 分支，用于显示打包后文件
 
+-   去除打印台多余日志
+
+-   将 HardSourceWebpackPlugin 移入 base 设置
+
 ## 关于作者 :boy:
 
 作者： 小皮咖
