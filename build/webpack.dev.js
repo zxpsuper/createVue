@@ -8,7 +8,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
-        port: 8080,
+        // port: 8080,
         contentBase: '../dist',
         host: '0.0.0.0',
         overlay: true,
@@ -22,7 +22,7 @@ module.exports = merge(common, {
                         )
                     )
                 })
-                .catch(err => {
+                .catch((err) => {
                     console.log(chalk.red(err))
                 })
         },
