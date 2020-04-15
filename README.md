@@ -10,13 +10,16 @@
 
 -   熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^\_−)☆
 
-**另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
+    <details>
+    <summary>微信</summary>
 
-<div>
-  <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
-</div>
+    <div>
+        <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
+    </div>
+    </details>
 
-**备注：**
+
+    **另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
 
 > 在 github 项目的右上角，有三个按钮,分别是 watch、star、fork，新来的同学注意不要用错了，无休止的邮件提醒会给你造成不必要的信息干扰。
 >
@@ -30,21 +33,19 @@
 
 ## 使用方法：
 
-```
-# 克隆项目
-git clone https://github.com/zxpsuper/createVue.git
-# 进入文件夹
-cd createVue
+        # 克隆项目
+        git clone https://github.com/zxpsuper/createVue.git
+        # 进入文件夹
+        cd createVue
 
-# 安装依赖
-npm install
+        # 安装依赖
+        npm install
 
-# 进入开发
-npm start
+        # 进入开发
+        npm start
 
-# 打包
-npm run build
-```
+        # 打包
+        npm run build
 
 ### :book:更新日志
 
@@ -78,37 +79,37 @@ npm run build
 
 #### :sunny:2019/03/29
 
-    加入 copy-webpack-plugin 插件，设置 static 静态资源文件夹，使其内容打包后存在于打包后的 static 文件夹中
+        加入 copy-webpack-plugin 插件，设置 static 静态资源文件夹，使其内容打包后存在于打包后的 static 文件夹中
 
-    加入 babel-preset-es2015 与 babel-preset-stage-2 插件，解决 ...mapActions() 在 methods 中展开无效的问题
+        加入 babel-preset-es2015 与 babel-preset-stage-2 插件，解决 ...mapActions() 在 methods 中展开无效的问题
 
 #### :sunny:2019/06/11
 
-    加入 `workbox-webpack-plugin` 插件，实现 PWA 离线加载功能
+        加入 `workbox-webpack-plugin` 插件，实现 PWA 离线加载功能
 
-    若不需用到，在 `webpack.prod.js` 中删除即可
+        若不需用到，在 `webpack.prod.js` 中删除即可
 
 #### :sunny:2019/11/07
 
-    去除 dev 启动时多余的打印日志，还你一个干净的控制台
+        去除 dev 启动时多余的打印日志，还你一个干净的控制台
 
-    解决外网无法通过 IP + 端口访问的问题，默认端口为 8080
+        解决外网无法通过 IP + 端口访问的问题，默认端口为 8080
 
 #### :sunny:2019/12/05
 
 -   正式加入 **webpack.dll**
 
-**dll 的作用：**
+    **dll 的作用：**
 
-    1. Dll 打包以后是独立存在的，只要其包含的库没有增减、升级，hash 也不会变化，因此线上的 dll 代码不需要随着版本发布频繁更新。
+        1. Dll 打包以后是独立存在的，只要其包含的库没有增减、升级，hash 也不会变化，因此线上的 dll 代码不需要随着版本发布频繁更新。
 
-    2. App 部分代码修改后，只需要编译 app 部分的代码，dll 部分，只要包含的库没有增减、升级，就不需要重新打包。这样也大大提高了每次编译的速度。
+        2. App 部分代码修改后，只需要编译 app 部分的代码，dll 部分，只要包含的库没有增减、升级，就不需要重新打包。这样也大大提高了每次编译的速度。
 
-    3. 假设你有多个项目，使用了相同的一些依赖库，它们就可以共用一个 dll。
+        3. 假设你有多个项目，使用了相同的一些依赖库，它们就可以共用一个 dll。
 
-**dll 文件包含的依赖：** `vue , vue-router , vuex , axios`
+    **dll 文件包含的依赖：** `vue , vue-router , vuex , axios`
 
-**dll 使用：** 开发前需执行命令 `npm run build:dll` 创建 dll 文件
+    **dll 使用：** 开发前需执行命令 `npm run build:dll` 创建 dll 文件
 
 #### :sunny:2019/12/06
 
