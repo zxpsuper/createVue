@@ -72,7 +72,7 @@
 <script>
 import textFaceList from './face.json'
 import emojiPngUrl from '@/assets/emoji.png'
-import emojiFaceList from './emoji.json'
+import emojiFaceList from './emoji.js'
 
 export default {
     props: {
