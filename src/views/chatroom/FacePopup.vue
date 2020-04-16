@@ -97,7 +97,6 @@ export default {
     },
     methods: {
         onSelectFace(content) {
-            console.log(content)
             if (!this.isKicked) {
                 this.$emit('select-face', { content })
             }
