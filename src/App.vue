@@ -11,19 +11,17 @@
                 src="./assets/logo.png"
                 alt
                 v-if="show"
-                style="transition: all 0.3s"
+                style="transition: all 0.3s;"
             />
         </transition>
         <div class="flex space-around router">
             <router-link to="/introduce">Introduce</router-link>
             <router-link to="/me">About me</router-link>
-            <router-link to="/loadmore">loadmore</router-link>
         </div>
         <router-view></router-view>
     </div>
 </template>
 <script>
-// import HelloWorld from '@/components/HelloWorld.vue'
 import { mapActions } from 'vuex'
 import { setInterval } from 'timers'
 
@@ -34,9 +32,6 @@ export default {
             show: true,
         }
     },
-    components: {
-        // HelloWorld,
-    },
     created() {
         /* eslint-disable */
         console.log(process.env.NODE_ENV)
@@ -46,7 +41,7 @@ export default {
                 'https://www.easy-mock.com/mock/5b1f88a39f7d4a3a70fcbfd3/suporka/get',
                 {}
             )
-            .then(res => {
+            .then((res) => {
                 console.log(res)
             })
         // post 请求
@@ -55,10 +50,10 @@ export default {
                 'https://www.easy-mock.com/mock/5b1f88a39f7d4a3a70fcbfd3/suporka/post',
                 {}
             )
-            .then(res => {
+            .then((res) => {
                 console.log(res)
             })
-            .catch(err => {
+            .catch((err) => {
                 console.log(err)
             })
 
@@ -67,7 +62,7 @@ export default {
             this.countUp() // 两种方法，一种直接commit,一种通过 mapActions([]) 引入至methods中后再使用
         }, 1000)
 
-        this.$ajax.get('../static/head.json', {}).then(res => {
+        this.$ajax.get('../static/head.json', {}).then((res) => {
             console.log(res)
         })
     },
