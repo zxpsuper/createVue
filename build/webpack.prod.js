@@ -129,27 +129,31 @@ module.exports = merge(common, {
                             name: 'imgs/[hash].[ext]',
                         },
                     },
-                    // 图片压缩
-                    {
+                    // 图片压缩,这里暂时注释。如需使用图片压缩，需用 cnpm i image-webpack-loader@6.0.0 -D 安装依赖，用npm 会报命令错误，可能是权限问题；然后取消下面的注释即可
+                    /*{
                         loader: 'image-webpack-loader',
                         options: {
-                            //   bypassOnDebug: true,
                             mozjpeg: {
                                 progressive: true,
                                 quality: 65,
                             },
+                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: false,
                             },
                             pngquant: {
-                                quality: '65-90',
+                                quality: [0.65, 0.9],
                                 speed: 4,
                             },
                             gifsicle: {
                                 interlaced: false,
                             },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75,
+                            },
                         },
-                    },
+                    },*/
                 ],
             },
         ],
