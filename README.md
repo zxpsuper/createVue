@@ -155,6 +155,10 @@
 
 -   将 HardSourceWebpackPlugin 移入 base 设置
 
+#### :sunny:2020/06/09
+
+-   去除 prod 配置下的 image-webpack-loader 图片压缩 loader，解决 npm yarn 安装报错，如需使用可祥看配置中的注释
+
 ## 关于作者 :boy:
 
 作者： 小皮咖
