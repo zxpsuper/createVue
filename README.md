@@ -47,7 +47,7 @@
         # 打包
         npm run build
 
-### :book:更新日志
+## :book:更新日志
 
 #### :sunny:2018/11/14
 
@@ -158,6 +158,11 @@
 #### :sunny:2020/06/09
 
 -   去除 prod 配置下的 image-webpack-loader 图片压缩 loader，解决 npm yarn 安装报错，如需使用可祥看配置中的注释
+
+#### :sunny:2020/07/18
+
+-   升级 node 版本以及由此产生的 node-sass 问题，建议升级node版本，当前版本 `v12.18.2`
+-   加入音乐播放器组件
 
 ## 关于作者 :boy:
 

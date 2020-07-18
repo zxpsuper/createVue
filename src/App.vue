@@ -14,6 +14,9 @@
                 style="transition: all 0.3s;"
             />
         </transition>
+        <div>
+            <Music style="margin: 20px auto; display: inline-block;" />
+        </div>
         <div class="flex space-around router">
             <router-link to="/introduce">Introduce</router-link>
             <router-link to="/me">About me</router-link>
@@ -23,10 +26,10 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import { setInterval } from 'timers'
-
+import Music from './components/Music'
 export default {
     name: 'app',
+    components: { Music },
     data() {
         return {
             show: true,

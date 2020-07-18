@@ -11,26 +11,26 @@
         <p>You can learn webpack, vue, vue-router, vuex, proxy and so on.</p>
         <p>I hope that can be helpful for you!! And finally,</p>
         <h2>Welcome star!</h2>
-        <p>You have stay here for {{ count }} second</p>
+        <p>
+            You have stay here for {{ count }} second, click time: {{ suporka }}
+        </p>
         <Throttle :time="5000" events="click">
-            <button @click="onClick($event, 1)" isDebounce v-once>click</button>
+            <button @click="onClick($event, 1)" isDebounce v-once>
+                Debounce click
+            </button>
         </Throttle>
 
         <Throttle :time="2000" events="click">
             <button @click="haha" isDebounce>open Mask</button>
         </Throttle>
+        <button @click="suporka += 1">click</button>
 
-        <div>{{ suporka }}</div>
-
-        <div>
-            <button @click="suporka += 1">click</button>
-        </div>
         <date-picker style="margin: 10px auto;"></date-picker>
         <mask-model v-model="ifShowMask">
             <div style="padding: 20px;">Welcome to suporka vue</div>
         </mask-model>
-        <h2>以下用于测试首屏时间：</h2>
-        <h3>在控制台输入：whiteScreenTime.showData() 即可查看</h3>
+        <h3>Test first screen load time：</h3>
+        <h4>input the code on console ：whiteScreenTime.showData()</h4>
         <img
             :src="item"
             alt
