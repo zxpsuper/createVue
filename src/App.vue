@@ -27,6 +27,7 @@
 <script>
 import { mapActions } from 'vuex'
 import Music from './components/Music'
+
 export default {
     name: 'app',
     components: { Music },

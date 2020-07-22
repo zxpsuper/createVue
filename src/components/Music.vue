@@ -1,14 +1,14 @@
 <template>
     <div>
-        <Player :playList="playList" theme="black" />
+        <MPlayer :playList="playList" theme="black" />
     </div>
 </template>
 
 <script>
-import Player from '@/base/musicPlayer/index.vue'
+import MPlayer from 'vue-mplayer'
 export default {
     components: {
-        Player,
+        MPlayer,
     },
     data() {
         return {
@@ -22,6 +22,14 @@ export default {
                         'https://api.i-meto.com/meting/api?server=netease&type=pic&id=109951163244870797&auth=4aae13d0e54ee102a1fd08d8379acbe282f859a2',
                     lrc:
                         'https://api.i-meto.com/meting/api?server=netease&type=lrc&id=368760&auth=8e31a5af0daaf95e8625ddb18beb171cf20dbefd',
+                },
+                {
+                    title: '这就是街舞3(hls)',
+                    author: '优酷',
+                    url:
+                        'https://douban.donghongzuida.com/20200718/5756_cb5982a3/index.m3u8',
+                    pic:
+                        'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.jpg',
                 },
                 {
                     title: '想见你想见你想见你',
