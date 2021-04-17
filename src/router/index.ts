@@ -1,12 +1,11 @@
 /* eslint-disable */
-import VueRouter from 'vue-router'
-// import HelloWorld from "@/components/HelloWorld.vue";
-// import Me from "@/components/Me.vue";
-// 路由懒加载, 得结合 babel-plugin-syntax-dynamic-import 插件使用
+import { createRouter, createWebHashHistory } from 'vue-router'
+
+// 路由懒加载
 const HelloWorld = () => import('@/components/HelloWorld.vue')
 const Me = () => import('@/components/Me.vue')
-const router = new VueRouter({
-    mode: 'hash',
+const router = createRouter({
+    history: createWebHashHistory(),
     routes: [
         { path: '/', redirect: { name: 'introduce' } },
         {

@@ -14,22 +14,17 @@
         <p>You have stay here for {{ count }} seconds!</p>
     </div>
 </template>
-<script>
-export default {
-    name: '',
-    data() {
-        return {
-            name: 1,
-            $haha: 22,
-        }
-    },
-    computed: {
-        count() {
-            return this.$store.state.count
-        },
-    },
-    created() {},
-}
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
+export default defineComponent({
+    name: 'AboutMe',
+    setup() {
+        const store = useStore()
+        const count = computed(() => store.state.count)
+        return { count }
+    }
+})
 </script>
 <style scoped>
 a {

@@ -1,4 +1,4 @@
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.base.js')
 const path = require('path')
 const open = require('opn') //打开浏览器

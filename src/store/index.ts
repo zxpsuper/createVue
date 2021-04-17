@@ -1,11 +1,10 @@
 import 'es6-promise/auto'
-import Vue from 'vue'
-import Vuex from 'vuex'
-Vue.use(Vuex)
+import { createStore } from 'vuex'
 
-const store = new Vuex.Store({
+export default createStore({
     state: {
         count: 0,
+        suporka: 'suporka'
     },
     mutations: {
         increment(state) {
@@ -23,6 +22,5 @@ const store = new Vuex.Store({
             ctx.commit('decrement')
         },
     },
+    modules: {},
 })
-
-export default store
