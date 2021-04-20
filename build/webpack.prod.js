@@ -1,6 +1,6 @@
 const path = require('path')
 // 合并配置文件
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.base.js')
 // 打包之前清除文件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -19,10 +19,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const config = require('./config.js')
 
 var plugins = [
-    new CleanWebpackPlugin({
-        root: path.resolve(__dirname, '../'),
-        cleanOnceBeforeBuildPatterns: ['dist/*']
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
@@ -73,10 +70,10 @@ module.exports = merge(common, {
         minimizer: [
             new UglifyJsPlugin({
                 uglifyOptions: {
+                    warnings: false,
                     compress: {
-                        // warnings: false,
                         drop_debugger: true,
-                        drop_console: true,
+                        // drop_console: true,
                     },
                 },
                 cache: true, // 开启缓存
