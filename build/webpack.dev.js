@@ -7,12 +7,19 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = merge(common, {
     devtool: 'inline-source-map',
+    cache: {
+        type: 'filesystem',
+    },
+    output: {
+        filename: '[name].bundle.js',
+    },
     devServer: {
         // port: 8080,
         contentBase: '../dist',
         host: '0.0.0.0',
         overlay: true,
         stats: 'errors-only',
+        compress: true, // 为每个静态文件开启 gzip compression
         after() {
             open('http://localhost:' + this.port)
                 .then(() => {
@@ -56,16 +63,7 @@ module.exports = merge(common, {
             },
             {
                 test: /\.(png|svg|jpg|gif|cur)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            limit: 5000,
-                            name: 'imgs/[name].[ext]',
-                            // publicPath: '../'
-                        },
-                    },
-                ],
+                type: 'asset/resource',
             },
         ],
     },

@@ -12,6 +12,8 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
+        "noEmit": true,
+        "isolatedModules": true,
         "baseUrl": ".",
         "types": ["node", "webpack-env"],
         "paths": {
