@@ -10,12 +10,24 @@
     "commit": "node commit/git-commit.js",
     "check-types": "tsc --watch",
     "build": "webpack --config build/webpack.prod.js",
-    "publish": "npm run build && node commit/publish.js"
+    "publish": "npm run build && node commit/publish.js",
+    "lintcss": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "commitlint": "commitlint -e"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,css,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{html,vue,css,sass,scss,less}": [
+      "stylelint --fix"
+    ]
   },
   "repository": {
     "type": "git",
@@ -39,6 +51,8 @@
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-typescript": "^7.13.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "@types/node": "^14.14.41",
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -49,6 +63,7 @@
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.2",
     "css-minimizer-webpack-plugin": "^2.0.0",
+    "css-properties-sorting": "^1.0.10",
     "dayjs": "^1.10.4",
     "eslint": "^7.24.0",
     "eslint-plugin-vue": "^7.9.0",
@@ -66,6 +81,7 @@
     "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.4.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "pinst": "^2.1.6",
     "postcss": "^8.2.10",
     "postcss-loader": "^5.2.0",
     "prettier": "^2.2.1",
@@ -73,6 +89,9 @@
     "sass-loader": "^11.0.1",
     "shelljs": "^0.8.4",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.13.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
@@ -84,12 +103,6 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
     "workbox-webpack-plugin": "^6.1.5"
-  },
-  "lint-staged": {
-    "src/**/*.{js,json,css,vue}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.13.17",
