@@ -238,7 +238,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     var data = (0,reactivity_esm_bundler/* reactive */.qj)({
       show: true
     });
-    console.log('VUEP_BASE_URL=' + "http://localhost:9000", "2021/26/04 05:48:01");
+    console.log('VUEP_BASE_URL=' + "http://localhost:9000", "2021/26/04 11:35:34");
     setInterval(function () {
       store.dispatch('countUp');
     }, 1000);
