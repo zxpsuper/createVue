@@ -7,23 +7,23 @@ module.exports = {
       choices: [
         {
           name: '✨ 引入新特性',
-          value: 'feat(:sparkles:): 引入新特性 ',
+          value: 'feat(:sparkles:)',
         },
         {
-          name: '🎨 改进代码的结构格式',
-          value: ':art: 改进代码的结构/格式 ',
+          name: '🎨 改进代码的结构格式/样式',
+          value: 'style(:art:)',
         },
         {
           name: '🐛 修复 bug',
-          value: ':bug: 修复 bug ',
+          value: 'fix(:bug:)',
         },
         {
           name: '⚡️ 提升性能',
-          value: ':zap: 提升性能 ',
+          value: 'upgrade(:zap:)',
         },
         {
           name: '🔥 删除代码或文件',
-          value: ':new: 删除代码或文件 ',
+          value: 'delete(:new:)',
         },
         {
           name: '💄 更新用户界面和样式文件',
@@ -31,43 +31,35 @@ module.exports = {
         },
         {
           name: '🔧 更改配置文件',
-          value: ':wrench: 更改配置文件 ',
+          value: 'config(:wrench:)',
         },
         {
-          name: '🚧 工作进行中',
-          value: ':construction: 工作进行中 ',
+          name: '🚧 重构',
+          value: 'refactor(:construction:)',
         },
         {
           name: '📝 撰写文档',
-          value: ':memo: 撰写文档 ',
+          value: 'docs(:memo:)',
         },
         {
           name: '✅ 增加测试',
-          value: ':white_check_mark: 增加测试 ',
+          value: 'test(:white_check_mark:)',
         },
         {
           name: '📦 更新打包文件',
-          value: ':package: 更新打包文件 ',
+          value: 'package(:package:)',
         },
         {
           name: '🎉 初次提交',
-          value: ':tada: 初次提交 ',
+          value: 'init(:tada:)',
         },
         {
           name: '🔖 发布/版本标签',
-          value: ':bookmark: 发布/版本标签',
+          value: 'release(:bookmark:)',
         },
         {
           name: '🚀 部署功能',
-          value: ':rocket: 部署功能 ',
-        },
-        {
-          name: '👷 CI编译系统',
-          value: ':construction_worker: CI编译系统 ',
-        },
-        {
-          name: '🌐 国际化与本地化',
-          value: ':globe_with_meridians: 国际化与本地化 ',
+          value: 'deploy(:rocket:)',
         },
       ],
     },
