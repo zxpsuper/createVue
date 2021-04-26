@@ -6,60 +6,64 @@ module.exports = {
       message: '请选择本次提交的类型:',
       choices: [
         {
-          name: '✨ 引入新特性',
+          name: '引入新特性',
           value: 'feat(:sparkles:)',
         },
         {
-          name: '🎨 改进代码的结构格式/样式',
+          name: '改进代码的结构格式/样式',
           value: 'style(:art:)',
         },
         {
-          name: '🐛 修复 bug',
+          name: '修复 bug',
           value: 'fix(:bug:)',
         },
         {
-          name: '⚡️ 提升性能',
-          value: 'upgrade(:zap:)',
+          name: '提升性能',
+          value: 'perf(:zap:)',
         },
         {
-          name: '🔥 删除代码或文件',
+          name: '删除代码或文件',
           value: 'delete(:new:)',
         },
         {
-          name: '💄 更新用户界面和样式文件',
-          value: ':lipstick: 更新用户界面和样式文件',
+          name: '其他修改, 比如改变构建流程、或者增加依赖库、工具等',
+          value: 'chore(:wrench:)',
         },
         {
-          name: '🔧 更改配置文件',
-          value: 'config(:wrench:)',
-        },
-        {
-          name: '🚧 重构',
+          name: '重构',
           value: 'refactor(:construction:)',
         },
         {
-          name: '📝 撰写文档',
+          name: '撰写文档',
           value: 'docs(:memo:)',
         },
         {
-          name: '✅ 增加测试',
+          name: '增加测试',
           value: 'test(:white_check_mark:)',
         },
         {
-          name: '📦 更新打包文件',
-          value: 'package(:package:)',
+          name: '更新打包文件',
+          value: 'build(:package:)',
         },
         {
-          name: '🎉 初次提交',
+          name: '初次提交',
           value: 'init(:tada:)',
         },
         {
-          name: '🔖 发布/版本标签',
+          name: '发布/版本标签',
           value: 'release(:bookmark:)',
         },
         {
-          name: '🚀 部署功能',
+          name: '部署功能',
           value: 'deploy(:rocket:)',
+        },
+        {
+          name: '代码回滚',
+          value: 'revert',
+        },
+        {
+          name: 'CI持续集成修改',
+          value: 'ci(:construction_worker:)',
         },
       ],
     },

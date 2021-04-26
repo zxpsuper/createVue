@@ -14,12 +14,6 @@
     "lintcss": "stylelint --fix \"src/**/*.less\" --syntax less",
     "commitlint": "commitlint -e"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,json,css,vue}": [
       "prettier --write",
