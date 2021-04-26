@@ -2,22 +2,21 @@
 
 ## 项目介绍
 
--   本项目基于 webpack5 搭建 vue3 项目。
+- 本项目基于 webpack5 搭建 vue3 + ts 项目。
 
--   你可以用此项目搭建属于你的项目！！
+- 你可以用此项目搭建属于你的项目！！
 
--   熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^\_−)☆
+- 熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^\_−)☆
 
-    <details>
-    <summary>微信</summary>
+  <details>
+  <summary>微信</summary>
 
-    <div>
-        <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
-    </div>
-    </details>
+  <div>
+      <img src="https://github.com/zxpsuper/Demo/blob/master/images/wechat.png" style="width: 320px; margin: 0 auto; display: block">
+  </div>
+  </details>
 
-
-    **另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
+  **另外，我也做了一个[《从零搭建 react 的项目》](https://github.com/zxpsuper/createReact), 分享给大家**
 
 > 在 github 项目的右上角，有三个按钮,分别是 watch、star、fork，新来的同学注意不要用错了，无休止的邮件提醒会给你造成不必要的信息干扰。
 >
@@ -31,27 +30,33 @@
 
 ## 使用方法：
 
-        # 克隆项目
-        git clone https://github.com/zxpsuper/createVue.git
-        # 进入文件夹
-        cd createVue
+```shell
+# 克隆项目
+git clone https://github.com/zxpsuper/createVue.git
+# 进入文件夹
+cd createVue
 
-        # 安装依赖
-        npm install
+# 安装依赖
+npm install
 
-        # 进入开发
-        npm start
+# 进入开发
+npm start
 
-        # 打包
-        npm run build
+# 打包
+npm run build
 
-## :book:更新日志
+# git commit
+npm run commit
+```
+
+
+## 更新日志
 
 #### :sunny:2021/04/17
 
--   添加 vue-router
+- 添加 vue-router
 
--   添加 vuex
+- 添加 vuex
 
 ## 关于作者 :boy:
 

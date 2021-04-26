@@ -7,55 +7,55 @@ module.exports = {
       choices: [
         {
           name: '引入新特性',
-          value: 'feat(:sparkles:)',
+          value: 'feat',
         },
         {
           name: '改进代码的结构格式/样式',
-          value: 'style(:art:)',
+          value: 'style',
         },
         {
           name: '修复 bug',
-          value: 'fix(:bug:)',
+          value: 'fix',
         },
         {
           name: '提升性能',
-          value: 'perf(:zap:)',
+          value: 'perf',
         },
         {
           name: '删除代码或文件',
-          value: 'delete(:new:)',
+          value: 'delete',
         },
         {
           name: '其他修改, 比如改变构建流程、或者增加依赖库、工具等',
-          value: 'chore(:wrench:)',
+          value: 'chore',
         },
         {
           name: '重构',
-          value: 'refactor(:construction:)',
+          value: 'refactor',
         },
         {
           name: '撰写文档',
-          value: 'docs(:memo:)',
+          value: 'docs',
         },
         {
           name: '增加测试',
-          value: 'test(:white_check_mark:)',
+          value: 'test',
         },
         {
           name: '更新打包文件',
-          value: 'build(:package:)',
+          value: 'build',
         },
         {
           name: '初次提交',
-          value: 'init(:tada:)',
+          value: 'init',
         },
         {
           name: '发布/版本标签',
-          value: 'release(:bookmark:)',
+          value: 'release',
         },
         {
           name: '部署功能',
-          value: 'deploy(:rocket:)',
+          value: 'deploy',
         },
         {
           name: '代码回滚',
@@ -63,7 +63,7 @@ module.exports = {
         },
         {
           name: 'CI持续集成修改',
-          value: 'ci(:construction_worker:)',
+          value: 'ci',
         },
       ],
     },
