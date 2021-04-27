@@ -5,7 +5,8 @@ module.exports = {
     es6: true,
     commonjs: true,
   },
-  extends: ['eslint:recommended', 'plugin:vue/essential'],
+  // plugin:prettier/recommended：使用prettier中的样式规范，且如果使得ESLint会检测prettier的格式问题，同样将格式问题以error的形式抛出
+  extends: ['plugin:vue/essential', 'airbnb-base', 'plugin:prettier/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -15,6 +16,12 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['vue'],
-  rules: {},
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {
+    'no-console': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'no-plusplus': 'off',
+    'no-param-reassign': 'off',
+  },
 }

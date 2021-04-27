@@ -17,6 +17,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
+
 export default defineComponent({
   name: 'AboutMe',
   setup() {
@@ -30,6 +31,7 @@ export default defineComponent({
 a {
   color: #42b983;
 }
+
 .link a {
   display: inline-block;
   margin: 0 20px;
