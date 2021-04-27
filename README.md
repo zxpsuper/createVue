@@ -2,11 +2,13 @@
 
 ## 项目介绍
 
-- 本项目基于 webpack5 搭建 vue3 + ts 项目。
+- 本项目基于 webpack5 搭建 vue3 + ts 项目。[相关文章](https://juejin.cn/post/6955430382485553166)
 
 - 你可以用此项目搭建属于你的项目！！
 
 - 熬夜不易，如果您觉得我的文章或者 demo 有用，可以赏我杯咖啡(^\_−)☆
+
+- webpack4 搭建 vue 项目点 [这里](https://github.com/zxpsuper/createVue/tree/v1.0.0)
 
   <details>
   <summary>微信</summary>

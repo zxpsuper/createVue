@@ -11,7 +11,7 @@
         src="./assets/logo.png"
         alt
         v-if="show"
-        style="transition: all 0.3s;"
+        style="transition: all 0.3s"
       />
     </transition>
     <div class="flex space-around router">
@@ -42,7 +42,7 @@ export default defineComponent({
       show: true,
     })
     console.log(
-      'VUEP_BASE_URL=' + process.env.VUE_BASE_URL,
+      `VUEP_BASE_URL=${process.env.VUE_BASE_URL}`,
       process.env.BUILD_TIME
     )
     setInterval(() => {
@@ -145,26 +145,23 @@ img {
 .github-fork-ribbon::before {
   padding: 0.38em 0;
   background-color: #f06;
-  background-image:
-    -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0)),
-      to(rgba(0, 0, 0, 0.15))
-    );
-  background-image:
-    -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.15)
-    );
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.15)
-    );
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 0.15))
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
   content: '';
 
   /* Add a drop shadow */
