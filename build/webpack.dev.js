@@ -10,9 +10,6 @@ module.exports = merge(common, {
   cache: {
     type: 'filesystem',
   },
-  output: {
-    filename: '[name].bundle.js',
-  },
   devServer: {
     // port: 8080,
     contentBase: '../dist',
