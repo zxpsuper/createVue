@@ -6,14 +6,12 @@
       title="Fork me on GitHub"
       >Fork me on GitHub</a
     >
-    <transition name="slide-up">
-      <img
-        src="./assets/logo.png"
-        alt
-        v-if="show"
-        style="transition: all 0.3s"
-      />
-    </transition>
+    <img
+      v-if="show"
+      src="./assets/logo.png"
+      alt=""
+      style="transition: all 0.3s"
+    />
     <div class="flex space-around router">
       <router-link to="/introduce">Introduce</router-link>
       <router-link to="/me">About me</router-link>
@@ -41,10 +39,12 @@ export default defineComponent({
     const data = reactive({
       show: true,
     })
-    console.log(
-      `VUEP_BASE_URL=${process.env.VUE_BASE_URL}`,
-      process.env.BUILD_TIME
-    )
+    if (process.env) {
+      console.log(
+        `VUEP_BASE_URL=${process.env.VUE_BASE_URL}`,
+        process.env.BUILD_TIME
+      )
+    }
     setInterval(() => {
       store.dispatch('countUp')
     }, 1000)

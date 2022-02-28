@@ -1,9 +1,9 @@
 const { merge } = require('webpack-merge')
-const common = require('./webpack.base.js')
 const path = require('path')
-const open = require('opn') //打开浏览器
+const open = require('opn') // 打开浏览器
 const chalk = require('chalk') // 改变命令行中输出日志颜色插件
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const common = require('./webpack.base.js')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -11,17 +11,18 @@ module.exports = merge(common, {
     type: 'filesystem',
   },
   devServer: {
-    // port: 8080,
+    port: 8010,
+    // https: true,
     contentBase: '../dist',
     host: '0.0.0.0',
     overlay: true,
     stats: 'errors-only',
     compress: true, // 为每个静态文件开启 gzip compression
     after() {
-      open('http://localhost:' + this.port)
+      open(`http://localhost:${this.port}`)
         .then(() => {
           console.log(
-            chalk.cyan('成功打开链接： http://localhost:' + this.port)
+            chalk.cyan(`成功打开链接： http://localhost:${this.port}`)
           )
         })
         .catch((err) => {

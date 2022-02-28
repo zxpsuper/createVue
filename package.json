@@ -7,6 +7,9 @@
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --progress --hot --inline --config build/webpack.dev.js",
+    "vite": "vite",
+    "vite:build": "vite build",
+    "vite:preview": "vite preview",
     "commit": "node commit/git-commit.js",
     "check-types": "tsc --watch",
     "build": "webpack --config build/webpack.prod.js",
@@ -51,6 +54,7 @@
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "@vitejs/plugin-vue": "^2.2.2",
     "@vue/compiler-sfc": "^3.0.11",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
@@ -94,6 +98,7 @@
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "uniq": "^1.0.1",
     "url-loader": "^4.1.1",
     "vue-loader": "^16.2.0",
     "webpack": "^5.33.2",
@@ -106,11 +111,13 @@
   "dependencies": {
     "@babel/runtime": "^7.13.17",
     "@babel/runtime-corejs3": "^7.13.17",
+    "@vitejs/plugin-vue": "^2.2.2",
     "axios": "^0.21.1",
     "core-js": "^3.11.0",
     "es6-promise": "^4.2.5",
     "vue": "^3.0.11",
     "vue-router": "^4.0.6",
+    "vite": "^2.8.4",
     "vuex": "^4.0.0"
   }
 }

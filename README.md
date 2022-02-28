@@ -54,6 +54,11 @@ npm run commit
 
 ## 更新日志
 
+
+#### :sunny:2022/02/28
+
+- 添加对 vite 的支持，可与 webpack 同时使用
+
 #### :sunny:2021/04/17
 
 - 添加 vue-router
