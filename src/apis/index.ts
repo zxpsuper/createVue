@@ -14,10 +14,8 @@ export default {
     })
   },
   get<T>(url: string, data: AxiosRequestConfig) {
-    return axios
-      .get<T>(url, { params: data })
-      .then((res) => {
-        return Promise.resolve(res.data)
-      })
+    return axios.get<T>(url, { params: data }).then((res) => {
+      return Promise.resolve(res.data)
+    })
   },
 }

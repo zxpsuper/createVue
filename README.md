@@ -57,7 +57,7 @@ npm run commit
 
 #### :sunny:2022/02/28
 
-- 添加对 vite 的支持，可与 webpack 同时使用
+- 添加对 vite 的支持，可与 webpack 同时使用。目前测试 vite 打包的体积会更小
 
 #### :sunny:2021/04/17
 
